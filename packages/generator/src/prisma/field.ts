@@ -96,8 +96,8 @@ export class Field {
           break
       }
     }
-    if (!/^[A-Za-z]*$/.test(fieldName)) {
-      // modelName should be just alpha characters at this point, validate
+    if (!/^[A-Za-z][A-Za-z0-9_]*$/.test(fieldName)) {
+      // modelName should start with alpha characters at this point, validate
       throw new Error(
         `[Field.parse]: received unknown special character in field name: ${fieldName}`,
       )
